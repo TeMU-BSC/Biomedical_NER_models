@@ -1,4 +1,4 @@
-| **Nombre de model** | **Version** | **Entidades** | **Link **                                      |
+| **Nombre de model** | **Version** | **Entidades** | **Link**                                       |
 | ------------------- | ----------- | ------------- | ---------------------------------------------- |
 | symptoms_base       | base        | sintoma       | https://hub.docker.com/r/bsctemu/symptoms_base |
 | symptoms            | best        | sintoma       | https://hub.docker.com/r/bsctemu/symptoms      |
