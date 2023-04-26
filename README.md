@@ -19,7 +19,11 @@ The models generated are available as docker images that can be accessed and exe
 | diseases_base       | biomedical  | ENFERMEDAD    | ❌                                    | `bsctemu/diseases_base`    | https://hub.docker.com/r/bsctemu/diseases_base    |
 | diseases            | clinical    | ENFERMEDAD    | ✅                                    | `bsctemu/diseases`         | https://hub.docker.com/r/bsctemu/diseases         |
 | professions            | biomedical    | ACTIVIDAD, PROFESION, SITUACION_LABORAL    | ❌                                    | `bsctemu/meddoprof`         | https://hub.docker.com/r/bsctemu/meddoprof         |
-
+| meddoplace_base | biomedical | GPE, GEO, FAC, GENTILICIO, IDIOMA, TRANSPORTE | ❌  | `bsctemu/meddoplace_base` | https://hub.docker.com/r/bsctemu/meddoplace_base |
+| meddoplace_intermediate | biomedical | GPE_GEN, GPE_NOM, GEO_GEN, GEO_NOM, FAC_GEN, FAC_NOM, DEPARTAMENTO, GENTILICIO, IDIOMA, TRANSPORTE | ❌  | `bsctemu/meddoplace_intermediate` | https://hub.docker.com/r/bsctemu/meddoplace_intermediate |
+| negation_uncertainty_base | biomedical | NEG, NSCO, UNC, USCO | ❌ | `bsctemu/negation_uncertainty_base` | https://hub.docker.com/r/bsctemu/negation_uncertainty_base |
+| negation_uncertainty_clinical | clinical | NEG, NSCO, UNC, USCO | ✅ | `bsctemu/negation_uncertainty_clinical` | https://hub.docker.com/r/bsctemu/negation_uncertainty_clinical |
+| temporality_base | biomedical | AGE, DATE, DURATION, TIME, SET | ❌ | `bsctemu/temporality_base` | https://hub.docker.com/r/bsctemu/temporality_base |
 
 ## Usage example
 <details>
@@ -28,25 +32,25 @@ The models generated are available as docker images that can be accessed and exe
 ```
    docker pull <name_of_image>
 ```
-   
+
 For example, you could download the species model:
-   
+
 ```
    docker pull bsctemu/species
 ```
-   
+
 </details>
-   
+
 <details>
 <summary><b>2. Run image</b></summary>
 The port number should be a free port in your system, in this case we are using 8003 as an example.
-   
+
 ```
    docker run -d -p 8003:5000 -t --name <internal_name_of_container> <name_of_image>
 ```
-   
+
 For example, run the previously pulled image in port 8003:
-   
+
 ```
    docker run -d  -p 8003:5000 -t --name species  bsctemu/species
 ```
@@ -55,7 +59,7 @@ For example, run the previously pulled image in port 8003:
 <details>
 <summary><b>3. Make API requests</b></summary>
 You can make requests to the generated API through Curl from terminal or another interface of your system.
-   
+
 ```
    curl --location 'http://0.0.0.0:8003/api/submit' \
    --header 'Content-Type: application/json' \
@@ -145,24 +149,24 @@ The results appear within a dictionary type data structure, within the key "brat
   "success": true
 }
 ```
-   
+
 </details>
-  
+
 <details>
 <summary><b>5. Stop the Docker container</b></summary>
 Once you have finished the requests you can stop the container as follows.
-   
+
 ```
     docker stop <internal_name_of_container>    
 ```
-   
+
 In the case of the example, we could stop the container with the following terminal line
-   
+
 ```
    docker stop species
 ```
 </details>
- 
+
 ## Transformer-based biomedical language models
 
 If you want to access biomedical language models tuned for biomedical tasks, you can access the repository [lm-biomedica-clinical-en](https://github.com/PlanTL-GOB-ES/lm-biomedical-clinical-es)
