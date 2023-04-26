@@ -29,18 +29,23 @@ The models generated are available as docker images that can be accessed and exe
 ```
    
 For example, you could download the species model:
+   
 ```
    docker pull bsctemu/species
 ```
+   
 </details>
    
 <details>
 <summary><b>2. Run image</b></summary>
 The port number should be a free port in your system, in this case we are using 8003 as an example.
+   
 ```
    docker run -d -p 8003:5000 -t --name <internal_name_of_container> <name_of_image>
 ```
+   
 For example, run the previously pulled image in port 8003:
+   
 ```
    docker run -d  -p 8003:5000 -t --name species  bsctemu/species
 ```
@@ -49,6 +54,7 @@ For example, run the previously pulled image in port 8003:
 <details>
 <summary><b>3. Make API requests</b></summary>
 You can make requests to the generated API through Curl from terminal or another interface of your system.
+   
 ```
    curl --location 'http://0.0.0.0:8003/api/submit' \
    --header 'Content-Type: application/json' \
@@ -138,6 +144,7 @@ The results appear within a dictionary type data structure, within the key "brat
   "success": true
 }
 ```
+   
 </details>
   
 <details>
@@ -147,7 +154,9 @@ Once you have finished the requests you can stop the container as follows.
 ```
     docker stop <internal_name_of_container>    
 ```
+   
 In the case of the example, we could stop the container with the following terminal line
+   
 ```
    docker stop species
 ```
