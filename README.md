@@ -26,7 +26,7 @@ The models generated are available as docker images that can be accessed and exe
 ```
    docker pull <name_of_image>
    #example
-   docker pull bsctemu/medications_base
+   docker pull bsctemu/species
 ```
 
 2. Run image
