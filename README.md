@@ -24,6 +24,9 @@ The models generated are available as docker images that can be accessed and exe
 | negation_uncertainty_base | biomedical | NEG, NSCO, UNC, USCO | ❌ | `bsctemu/negation_uncertainty_base` | https://hub.docker.com/r/bsctemu/negation_uncertainty_base |
 | negation_uncertainty_clinical | clinical | NEG, NSCO, UNC, USCO | ✅ | `bsctemu/negation_uncertainty_clinical` | https://hub.docker.com/r/bsctemu/negation_uncertainty_clinical |
 | temporality_base | biomedical | AGE, DATE, DURATION, TIME, SET | ❌ | `bsctemu/temporality_base` | https://hub.docker.com/r/bsctemu/temporality_base |
+| anonymization_base | biomedical | +20 labels | ❌ | `bsctemu/anonymization_base` | https://hub.docker.com/r/bsctemu/anonymization_base |
+| anonymization_intermediate | clinical | +20 labels | ✅ | `bsctemu/anonymization_intermediate` | https://hub.docker.com/r/bsctemu/anonymization_intermediate |
+
 
 ## Usage example
 <details>
