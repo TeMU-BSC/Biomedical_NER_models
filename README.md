@@ -25,9 +25,19 @@ The models generated are available as docker images that can be accessed and exe
    docker pull bsctemu/symptoms_base
    docker build -t <name_of_image> .
 
-2. Run image
+2. pull image from Docker hub
+   docker pull <name_of_image>
 
-   docker run -p 8003:5000 -t <name_of_image>
+3. Run image
+   #port number should be a free port, in this case we are using 8003 as an example.
+   docker run -d -p 8003:5000 -t <name_of_image>
+
+4. test using Curl in terminal
+   curl --location 'http://0.0.0.0:8003/api/submit' \
+   --header 'Content-Type: application/json' \
+   --data '{
+   "inputText": "Anamnesis Varón de 17 años con antecedentes personales de trastorno de déficit de atención e hiperactividad en la infancia y obesidad en seguimiento por Servicio de Endocrinología. Estudiante de un módulo de mecánica. Antecedentes familiares: hermana con parálisis cerebral infantil ependimoma variante de células claras grado II según la Organización Mundial de la Salud (OMS). Evolución » Se realiza resección completa del tumor sin presencia de complicaciones postquirúrgicas. En RM de control no se observa presencia de focos tumorales residuales. » Su mujer era una ama de casa que por las tardes tambien enseñaba ingles a menores. Se completa estudio de extensión mediante las siguientes pruebas complementarias: » RM columna vertebral: sin presencia de lesiones tumorales. » Punción lumbar: hematíes: 0, leucocitos: 20 con 65 % de linfocitos, glucosa de 52 mg/dl, Proteínas de 48 mg/dl.» Se comenta el caso en comité multidisciplinar, decidiéndose la no realización de tratamiento radioterápico complementario. Durante su seguimiento, el paciente no ha presentado nuevas recidivas tumorales. Como secuela permanente presenta amaurosis en ojo izquierdo."
+   }'
 
 ## Transformer-based biomedical language models
 
