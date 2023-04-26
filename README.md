@@ -21,26 +21,34 @@ The models generated are available as docker images that can be accessed and exe
 
 
 ## Usage example
-
-1. pull image from Docker hub
+<details>
+<summary><b>1. Pull image from Docker hub</b></summary>
 
 ```
    docker pull <name_of_image>
-   #example
+```
+   
+For example, you could download the species model:
+```
    docker pull bsctemu/species
 ```
-
-2. Run image
-
+</details>
+   
+<details>
+<summary><b>2. Run image</b></summary>
+The port number should be a free port in your system, in this case we are using 8003 as an example.
 ```
-   #port number should be a free port, in this case we are using 8003 as an example.
    docker run -d -p 8003:5000 -t --name <internal_name_of_container> <name_of_image>
-   #example:
+```
+For example, run the previously pulled image in port 8003:
+```
    docker run -d  -p 8003:5000 -t --name species  bsctemu/species
 ```
+</details>
 
-3. test using Curl in terminal
-
+<details>
+<summary><b>3. Make API requests</b></summary>
+You can make requests to the generated API through Curl from terminal or another interface of your system.
 ```
    curl --location 'http://0.0.0.0:8003/api/submit' \
    --header 'Content-Type: application/json' \
@@ -48,8 +56,11 @@ The models generated are available as docker images that can be accessed and exe
    "inputText": "Anamnesis Varón de 17 años con antecedentes personales de trastorno de déficit de atención e hiperactividad en la infancia y obesidad en seguimiento por Servicio de Endocrinología. Estudiante de un módulo de mecánica. Antecedentes familiares: hermana con parálisis cerebral infantil ependimoma variante de células claras grado II según la Organización Mundial de la Salud (OMS). Evolución » Se realiza resección completa del tumor sin presencia de complicaciones postquirúrgicas. En RM de control no se observa presencia de focos tumorales residuales. » Su mujer era una ama de casa que por las tardes tambien enseñaba ingles a menores. Se completa estudio de extensión mediante las siguientes pruebas complementarias: » RM columna vertebral: sin presencia de lesiones tumorales. » Punción lumbar: hematíes: 0, leucocitos: 20 con 65 % de linfocitos, glucosa de 52 mg/dl, Proteínas de 48 mg/dl.» Se comenta el caso en comité multidisciplinar, decidiéndose la no realización de tratamiento radioterápico complementario. Durante su seguimiento, el paciente no ha presentado nuevas recidivas tumorales. Como secuela permanente presenta amaurosis en ojo izquierdo."
    }'
 ```
+</details>
 
-4. result
+<details>
+<summary><b>4. Obtain results</b></summary>
+The results appear within a dictionary type data structure, within the key "brat". The "brat" value is a list of extracted entities containing the text and the start and end positions of the span.
 
 ```
     #in the terminal you should see something like this.
@@ -127,15 +138,21 @@ The models generated are available as docker images that can be accessed and exe
   "success": true
 }
 ```
-
-5. Stop the container
-
+</details>
+  
+<details>
+<summary><b>5. Stop the Docker container</b></summary>
+Once you have finished the requests you can stop the container as follows.
+   
 ```
-    docker stop <internal_name_of_container>
-    #example
-    docker stop species
+    docker stop <internal_name_of_container>    
 ```
-
+In the case of the example, we could stop the container with the following terminal line
+```
+   docker stop species
+```
+</details>
+ 
 ## Transformer-based biomedical language models
 
 If you want to access biomedical language models tuned for biomedical tasks, you can access the repository [lm-biomedica-clinical-en](https://github.com/PlanTL-GOB-ES/lm-biomedical-clinical-es)
