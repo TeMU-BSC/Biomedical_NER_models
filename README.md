@@ -18,6 +18,7 @@ The models generated are available as docker images that can be accessed and exe
 | medications         | clinical    | FARMACO       | ✅                                    | `bsctemu/medications`      | https://hub.docker.com/r/bsctemu/medications      |
 | diseases_base       | biomedical  | ENFERMEDAD    | ❌                                    | `bsctemu/diseases_base`    | https://hub.docker.com/r/bsctemu/diseases_base    |
 | diseases            | clinical    | ENFERMEDAD    | ✅                                    | `bsctemu/diseases`         | https://hub.docker.com/r/bsctemu/diseases         |
+| professions            | biomedical    | ACTIVIDAD, PROFESION, SITUACION_LABORAL    | ❌                                    | `bsctemu/meddoprof`         | https://hub.docker.com/r/bsctemu/meddoprof         |
 
 
 ## Usage example
